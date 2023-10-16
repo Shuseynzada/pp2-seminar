@@ -1,3 +1,5 @@
+package week3.ex1;
+
 public class Segment {
     private Point p1, p2;
     

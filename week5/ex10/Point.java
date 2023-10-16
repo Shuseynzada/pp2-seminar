@@ -1,4 +1,4 @@
-package week3.ex1;
+package week5.ex10;
 
 public class Point {
     private float x, y;
@@ -45,5 +45,12 @@ public class Point {
 
     boolean equals(Point p) {
         return (p.x - this.x) == 0 && (p.y - this.y) == 0;
+    }
+
+    public String toString(){
+        return "Point{"+
+            "x: "+this.x+", "+
+            "y: "+this.y+
+        "}";
     }
 }
