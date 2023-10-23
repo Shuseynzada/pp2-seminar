@@ -1,4 +1,5 @@
 package week6;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class Main {
@@ -15,6 +16,9 @@ public class Main {
         return power(x, n-1).multiply(new BigInteger(x+""));
     }
     public static void main(String[] args) {
-        System.out.println(power(10, 5));
+        BigDecimal a = new BigDecimal("2.35");
+        BigDecimal b = new BigDecimal("1.95");
+        BigDecimal c = b.subtract(a);
+        System.out.println(c);
     }
 }
