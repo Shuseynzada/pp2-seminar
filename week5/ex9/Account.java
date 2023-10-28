@@ -1,5 +1,3 @@
-package week5.ex9;
-
 public class Account {
     private int id;
     private Customer customer;
@@ -55,7 +53,7 @@ public class Account {
     }
 
     public void withdraw(double amount){
-        if(this.balance - amount < 0) System.out.println("Amount withdrawn exceeds the current balance!");
+        if(this.balance - amount < 0) throw new InvalidAmountException();
         else this.balance -= amount; 
     }
 }

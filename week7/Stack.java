@@ -6,7 +6,8 @@ public class Stack {
 
     public Stack(int capacity) {
         // TODO what is capacity is not a positive integer ?
-        this.capacity = capacity;
+        if(capacity > 0) this.capacity = capacity;
+        else throw new IllegalArgumentException("Stack capacity cannot be negative number");
         this.index = -1;
         this.elements = new int[capacity];
     }
@@ -20,19 +21,19 @@ public class Stack {
     }
 
     public int peek() {
-        // TODO: what if the stack is empty? index == 1?
+        if(index > elements.length || index < 0) throw new ArrayIndexOutOfBoundsException("Index is out of range");
 
         return elements[index];
     }
 
     public int pop() {
-        // TODO: what if the stack is empty? index == -1?
+        if(index > elements.length || index < 0) throw new ArrayIndexOutOfBoundsException("Cannot pop from empty Stack");
 
         return elements[index--];
     }
 
     public void push(int el) {
-        // TODO: what if the stack is full? index == capacity-1?
+        if(index == capacity-1) throw new ArrayIndexOutOfBoundsException("Stack is out of capacity");
 
         elements[++index] = el;
     }
@@ -50,9 +51,7 @@ public class Stack {
     }
 
     public static void main(String[] args) {
-        Stack stack = new Stack(5);
-
-        // stack.pop();
+        Stack stack = new Stack(4);
 
         stack.push(3);
         stack.push(5);
@@ -62,7 +61,6 @@ public class Stack {
         // stack.push(200000);
 
         stack.__print();
-
         // while (!stack.isEmpty()) {
         // System.out.println(stack.pop());
         // }

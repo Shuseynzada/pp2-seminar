@@ -3,17 +3,19 @@ public class CustomUserGeneration {
     public static void main(String[] args) {
 
         try {
-            createUser("demo_user", "12345", new String[] {});
+            createUser("demo_user", "123456789", new String[] { "role1" });
         } catch (InvalidUsernameException e) {
             e.printStackTrace();
         } catch (InvalidPasswordException e) {
+            e.printStackTrace();
+        } catch (InvalidRolesException e) {
             e.printStackTrace();
         }
 
     }
 
     public static void createUser(String username, String password, String[] roles)
-            throws InvalidUsernameException, InvalidPasswordException {
+            throws InvalidUsernameException, InvalidPasswordException, InvalidRolesException {
         if (username == null || username.length() < 3)
             throw new InvalidUsernameException("Username cannot contain less than three symbols");
 
@@ -22,6 +24,8 @@ public class CustomUserGeneration {
 
         if (password.length() < 8)
             throw new InvalidPasswordException("The length of the password cannot be less than 8.");
+        if (roles == null || roles.length < 1)
+            throw new InvalidRolesException("Roles cannot be empty");
 
         // TODO: roles CANNOT BE null or an empty array
 

@@ -1,0 +1,1 @@
+ > elements.length || index < 0) throw new ArrayIndexOutOfBoundsException("Index is out of range");
