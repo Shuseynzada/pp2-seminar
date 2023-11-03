@@ -1,3 +1,5 @@
+package week5.ex9;
+
 public class Main {
     public static void main(String[] args) {
         Customer c1 = new Customer(10, "Samxal", 'M');

@@ -1,3 +1,4 @@
+package week5.ex9;
 public class InvalidAmountException extends RuntimeException {
 
     public InvalidAmountException() {
