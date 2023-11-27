@@ -10,7 +10,7 @@ public class AdditionAndSort {
         long startTime = System.currentTimeMillis();
 
         for (int i = 0; i < 1000; i++) {
-            addSort((int)(Math.random()*100), l);
+            sortedAdd((int)(Math.random()*100), l);
         }
         long endTime = System.currentTimeMillis();
 
